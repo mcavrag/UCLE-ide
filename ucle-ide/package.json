@@ -22,7 +22,7 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
-    "electron": "^1.8.2",
+    "electron": "^9.1.1",
     "electron-packager": "^11.1.0"
   }
 }

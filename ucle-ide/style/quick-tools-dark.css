@@ -1,0 +1,525 @@
+html, body {
+	height: 100%;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: 'Optima', sans-serif;
+	font-size: 12px;
+	width:100%;
+	overflow: hidden;
+	background-color: #0f1419;
+	color: silver;
+	zoom: 1;	
+}
+
+#font-size::-webkit-outer-spin-button,
+#font-size::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#tools-wrapper {
+	width: 90%;
+	height: 32px;
+	padding-bottom: 10px;
+	margin: 0;
+	display: inline-block;
+}
+
+#tools {
+	padding: 0px;
+	list-style-type: none;
+}
+
+#display-files {
+	list-style-type: none;
+	padding-left: 0;
+	padding-top: 0px;
+	padding-right: 20px;
+}
+
+#quick-tools  {
+	margin: 0;
+	padding: 0 3px 0 0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	float:left;
+	width:18%;
+	height:91%;
+	white-space: normal;
+	text-overflow: ellipsis;
+	transition: 0.5s;
+	display: inline-block;
+	font-size: 16px;
+	box-sizing: border-box;
+	border-right: 2px solid #303030;
+	border-top: 2px solid #303030;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+div.opened {
+	display: inline-block;
+}
+
+li.tools {
+	display: inline-block;
+}
+
+i.dir-ico-opened {
+	background:url(../icons/dir-opened-light.png);
+	background-repeat:no-repeat;
+	background-position: bottom;
+	background-size: 100% 100%;	 
+	display: inline-block;
+	position:relative;
+	bottom: 0;
+	right: 0;
+	width: 15px;
+	height: 20px;
+	margin-left:10px;
+	padding-right: 5px;
+}
+
+i.dir-ico-closed {
+	background:url(../icons/dir-closed-light.png);
+	background-repeat:no-repeat;
+	background-position: bottom;
+	background-size: 100% 100%;	
+	display: inline-block;
+	position: relative;
+	bottom: 0;
+	right: 0;	
+	width: 15px;
+	height: 20px;
+	margin-left:10px;
+	padding-right: 5px;
+}
+
+#font-wrapper {
+	display: block;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#text-wrapper {
+	height: 20px;
+	display: inline-block;
+}
+
+#font-size {
+	float:left;
+	margin-right: 3px;
+	top: 10px;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	width:35px;
+	background-color: #373737;
+	color: silver;
+	outline: 0;
+	outline-color: transparent;
+	outline-style: none;
+	border-width: thin;	
+	border-color: silver;
+}
+
+#button-wrapper {
+	float:left;
+	display:inline-block;
+	width:20px;
+}
+
+#increase {
+	display: inline-block;
+	background:url(../icons/increase-light.png);
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:18px;
+	height:18px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#decrease {
+	display: inline-block;
+	background:url(../icons/decrease-light.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:18px;
+	height:18px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+i.explorer-ico-closed {
+	background:url(../icons/explorer-closed-light.png);
+	background-repeat:no-repeat;
+	background-position: bottom; 
+	background-size: 100% 100%;
+	display: inline-block;
+	position: relative;
+	bottom: 0;
+	right: 0;	
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+i.explorer-ico-opened {
+	background:url(../icons/explorer-opened-light.png);
+	background-repeat:no-repeat;
+	background-position: bottom;
+	background-size: 100% 100%;	
+	display: inline-block;
+	position: relative;
+	bottom: 0;
+	right: 0;	
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+i {
+	padding: 0;
+	margin: 0;
+}
+
+i.file-ico {
+	background:url(../icons/file-light.png);
+	background-repeat:no-repeat;
+	background-position: bottom; 
+	background-size: 15px 15px;
+	position: relative;
+	bottom: 0;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left:10px;
+	padding-right: 5px;
+}
+
+#workspace-text {
+	text-align: justify;
+	word-break: break-word;
+}
+
+#line-column-count {
+	position: relative;
+	left: 19%;
+	font-size: 14px;
+}
+
+.explorer {
+	display: block;
+	overflow: hidden;
+	background: linear-gradient(#1b1d1f, #1d1f21);
+	text-align: left;
+	font-size: 14px;
+	padding: 10px 10px 10px 0px;
+	margin-top: 5px;
+}
+
+.tools {
+	border-right: solid 3px rgba(48, 48, 48, .5);
+	border-collapse: collapse;
+	padding-left: 5px;
+}
+
+#opened-files {
+	box-sizing: border-box;
+	margin-top: 10px;
+	left: 0;
+	display: block;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#listed-files {
+	height: 86%;
+	box-sizing: border-box;
+	margin-top: 10px;
+	left: 0;
+	display: block;
+	position: relative;
+	overflow: auto;
+}
+
+.file-wrapper {
+	display: block;
+	overflow-y: auto;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: relative;
+	box-sizing: border-box;
+}
+
+#file-explorer {
+	display: inline-block;
+	background:url(../icons/file-explorer-light.png);
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding-right: 5px;
+	margin-right: 5px;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#refresh {
+	display: inline-block;
+	background:url(../icons/refresh-light.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+}
+
+#step.run-simulation {
+	display: inline-block;
+	background:url(../icons/step-sim.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#step.wait-simulation {
+	display: inline-block;
+	background:url(../icons/step-sim.png);
+	opacity: 0.5;
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#continue.run-simulation {
+	display: inline-block;
+	background:url(../icons/continue-sim.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#continue.wait-simulation {
+	display: inline-block;
+	background:url(../icons/continue-sim.png);	
+	opacity: 0.5;
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#rm-breakpoints.run-simulation {
+	display: inline-block;
+	background:url(../icons/remove-bp.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#rm-breakpoints.wait-simulation {
+	display: inline-block;
+	background:url(../icons/remove-bp.png);	
+	opacity: 0.5;
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#reset.run-simulation {
+	display: inline-block;
+	background:url(../icons/reset.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#reset.wait-simulation {
+	display: inline-block;
+	background:url(../icons/reset.png);	
+	opacity: 0.5;
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+
+#run-sim.run-simulation {
+	display: inline-block;
+	background:url(../icons/start-sim.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#run-sim.stop-simulation {
+	display: inline-block;
+	background:url(../icons/stop-sim.png);	
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	width:32px;
+	height:32px;
+	padding:0;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;	
+}
+
+#openbtn {
+	display: block;
+	margin: 20px auto;
+	font-size: 16px;
+	padding: 15px 25px;
+	background: #1b1d1f;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	color: silver;
+}
+
+#openbtn:hover {
+	cursor: pointer;
+	background-color: #373737;
+}
+
+li.dir, li.file, div.dir, div.file {
+	font-size: 12px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 4px;
+	background-color: #0f1419;
+	display: block;
+	overflow: hidden;
+	height: 20px;
+}
+#opened-files.hide, #listed-files.hide, ul.hide {
+	left:-5000px;
+	position: absolute;
+	visibility: hidden;
+}
+
+#file-explorer:hover, #refresh:hover, #increase:hover, #decrease:hover, .run-simulation:hover, .stop-simulation:hover, .explorer:hover {
+	cursor: pointer;
+}
+
+#file-explorer:active, #refresh:active, #increase:active, #decrease:active, #openbtn:active, .run-simulation:active, .stop-simulation:active {
+	transform: translateY(4px);
+}
+
+input.file-display {
+	width: 100%;
+	padding: 5px;
+	margin: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;    
+	border: none;
+	background-color: #606060;
+	color: silver;
+}
+
+input.file-display:focus {
+	outline: 0;
+	outline-color: transparent;
+	outline-style: none;	
+}
+
+::selection {
+	background: gray; /* WebKit/Blink Browsers */
+	color: silver;
+}
+
+li.dir:hover, div.dir:hover, li.file:hover, div.file:hover {
+	background-color: #474747!important;
+	cursor: pointer;
+}
+
+.file.highlight-input {
+	background-color: #404040;
+}

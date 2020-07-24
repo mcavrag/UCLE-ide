@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>UCLE</title>
+		<link rel="stylesheet" href="./style/ucle-tabs.css">
+		<link rel="stylesheet" href="./style/ucle-tabs-dark.css">
+		<link rel="stylesheet" id="quick-tools-theme" href="./style/quick-tools.css">
+		<link rel="stylesheet" id="editor-theme" href="./style/editor.css">
+	</head>
+	<body>
+		<div id="tools-wrapper">
+			<table class="tools">
+				<tr class="tools">
+						<td class="tools" title="File explorer"><span id="file-explorer"></span></td>
+						<td class="tools" title="Refresh"><span id="refresh"></span></td>
+						<td class="tools" title="Run simulation (CTRL + R)"><span id="run-sim" class="run-simulation"></span></td>
+						<td class="tools" title="Next step"><span id="step" class="wait-simulation"></span></td>		
+						<td class="tools" title="Continue"><span id="continue" class="wait-simulation"></span></td>		
+						<td class="tools" title="Remove breakpoints"><span id="rm-breakpoints" class="wait-simulation"></span></td>
+						<td class="tools" title="Reset processor"><span id="reset" class="wait-simulation"></span></td>
+						<td class="tools" title="Font size"><div id="font-wrapper">
+		                                        <input type="number" id="font-size" value="14">
+		                                        <div id="button-wrapper"><div id="increase" title="Increase font size"></div>
+		                                                                 <div id="decrease" title="Decrease font size"></div>
+		                                        </div>
+		                                      </div>
+						</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="quick-tools">
+			<div id="explorer" class="explorer"><i class="explorer-ico-closed"></i>Opened files</div>
+			<div id="opened-files"></div>
+			<div id="workspace" class="explorer"><i class="explorer-ico-opened"></i>Workspace</div>
+			<div id="listed-files">
+				<div id="workspace-text">You haven't added any folders to the workspace.</div>
+				<button id="openbtn" type="button">Open folder</button>
+			</div>
+		</div>
+
+		<div id="container">
+			<div class="ucle-tabs">
+				<div class="ucle-tabs-content"></div>
+				<div class="ucle-tabs-bottom-bar"></div>
+			</div>
+			<div id="editor"></div>
+		</div>
+
+		<div id="line-tab">
+			<span id="line-column-count"></span>
+		</div>
+
+		<div id="show-sim" style="class:hide;">
+			<table id="registers">
+				<tr>
+					<th>Register/Flag name</th>
+					<th>Register/Flag value</th>
+				</tr>
+			</table>
+		</div>
+
+		<script>
+			require('./renderer');
+			require('./scripts/quick_tools');
+		</script>
+	</body>
+</html>

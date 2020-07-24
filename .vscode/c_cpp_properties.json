@@ -1,0 +1,78 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "/usr/include/c++/7",
+                "/usr/include/c++/7/bits",
+                "/usr/include/c++/7/backward",
+                "/usr/include/linux",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include/x86_64-linux-gnu/c++/7",
+                "/usr/local/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/7/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+                "${workspaceRoot}",
+                "${workspaceRoot}/ucle/core/include",
+                "${workspaceRoot}/ucle/core/include/libs"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/include/c++/7",
+                    "/usr/include/c++/7/bits",
+                    "/usr/include/c++/7/backward",
+                    "/usr/include/linux",
+                    "/usr/include/x86_64-linux-gnu",
+                    "/usr/include/x86_64-linux-gnu/c++/7",
+                    "/usr/local/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/7/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+                    "${workspaceRoot}",
+                    "${workspaceRoot}/ucle/core/include",
+                    "${workspaceRoot}/ucle/core/include/libs"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "compilerPath": "/usr/bin/clang++-6.0",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++",
+                "C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/x86_64-w64-mingw32",
+                "C:/MinGW/mingw64/x86_64-w64-mingw32/include",
+                "${workspaceRoot}",
+                "${workspaceRoot}/ucle/core/include",
+                "${workspaceRoot}/ucle/core/include/libs"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++",
+                    "C:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/x86_64-w64-mingw32",
+                    "C:/MinGW/mingw64/x86_64-w64-mingw32/include",
+                    "${workspaceRoot}",
+                    "${workspaceRoot}/ucle/core/include",
+                    "${workspaceRoot}/ucle/core/include/libs"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,59 @@
+libraries 		= []
+library_paths 	= ''
+cpp_defines 	= {}
+cpp_paths       = ['include']
+cpp_flags 		= ['-Wall', '-Wextra', '-pedantic-errors' ]
+                #    '-Wcast-align', '-Wcast-qual', '-Wfloat-equal', '-Wpointer-arith',
+                #    '-Wctor-dtor-privacy', '-Wredundant-decls',
+                #    '-Wformat=2', '-Wmissing-format-attribute',
+                #    '-Wlogical-op', # '-Wuseless-cast', '-Wshadow', '-Wconversion', '-Wsign-conversion',
+                #    '-Wstrict-overflow=5', '-Wimplicit-fallthrough=5', # '-Wswitch-default', '-Winline',
+                #    '-Wmissing-declarations', '-Wmissing-field-initializers', # '-Wmissing-include-dirs',
+                #    '-Wsuggest-final-types', '-Wsuggest-final-methods', '-Wsuggest-override',
+                #    '-Wunused', '-Wuninitialized', # '-Wundef',
+                #    '-Wnull-dereference', '-Wpacked', # '-Wpadded',
+                #    '-Wzero-as-null-pointer-constant', '-Wmisleading-indentation',
+                #    '-Wdisabled-optimization']
+cxx_flags 		= ['-std=c++17']
+
+common = Environment()
+
+common['CXX'] = 'g++-7'
+
+common.Append(LIBS 			= libraries)
+common.Append(LIBPATH 		= library_paths)
+common.Append(CPPPATH       = cpp_paths)
+common.Append(CPPDEFINES 	= cpp_defines)
+common.Append(CPPFLAGS 		= cpp_flags)
+common.Append(CXXFLAGS 		= cxx_flags)
+
+# fmt: C++ modern formatting library
+common.Library('fmt', ['debug/libs/fmt/format.cc'], CPPFLAGS=[])
+
+# release = common.Clone()
+# release.Append(CPPDEFINES=['RELEASE'])
+# release.VariantDir('../build/release', '.', duplicate=0)
+# release.VariantDir('../build/release/test', 'test', duplicate=0)
+
+debug = common.Clone()
+debug.Append(CPPDEFINES=['DEBUG'], CPPFLAGS=['-O3', '-march=native'])
+debug.VariantDir('debug', 'src', duplicate=0)
+debug.VariantDir('debug/tests', 'tests', duplicate=0)
+
+arch_simulators = ['debug/fnsim/processors/frisc.cpp']
+arch_assemblers = ['debug/asm/processors/frisc.cpp']
+
+debug.Program(
+    'debug/fnsim-cli',
+    ['debug/fnsim/cli.cpp'] + arch_simulators,
+    LIBS=['fmt'],
+    LIBPATH='.'
+)
+
+# TODO: Redesign to make a generic asm
+debug.Program(
+    'debug/frisc-asm',
+    [] + arch_assemblers,
+    LIBS=['fmt'],
+    LIBPATH='.'
+)
